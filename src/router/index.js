@@ -1,20 +1,40 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ProductsPage from '@/views/products/ProductsPage.vue'
+import CategoriesPage from '@/views/categories/CategoriesPage.vue'
+import ProductsForCategoriesPage from '@/views/products/ProductsForCategoriesPage.vue'
+import DetailPageProducts from '@/views/products/DetailPageProducts.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
     component: HomeView
+     // eslint-disable-next-line
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/products',
+    name: 'products',
+    component: ProductsPage
+     // eslint-disable-next-line
+  },
+  {
+    path: '/categories',
+    component: CategoriesPage,
+     // eslint-disable-next-line,
+     children:[
+      { 
+      path: ':category',
+      name: 'categories',
+      component: ProductsForCategoriesPage
+      },
+      {
+        path:'/product-detail/:id',
+        name:'detail-prodcuts',
+        component:DetailPageProducts
+      }
+     ]
+  },
 ]
 
 const router = createRouter({

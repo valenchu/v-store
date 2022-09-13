@@ -1,4 +1,14 @@
-const { defineConfig } = require('@vue/cli-service')
+const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
-  transpileDependencies: true
-})
+  publicPath: '/store/',
+  transpileDependencies: true,
+  css: {//this is used for autoimport style in all project
+    loaderOptions: {
+      scss: {
+        additionalData: `@import "~@/scss/styles.scss";`
+      },
+    },
+  },
+  
+});
+  

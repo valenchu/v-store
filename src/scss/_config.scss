@@ -1,0 +1,46 @@
+//--Type of letter--
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Roboto:wght@100&family=Tiro+Bangla&display=swap');
+
+//title letter
+$font-title:  'Oswald', sans-serif;
+//subtitle letter
+$font-subtitle: "Roboto", sans-serif;
+//plain text
+$font-text: "Tiro Bangla", serif;
+
+//--Palette color--
+
+$black: #2c3333;
+$dark-blue: #395b64;
+$dark-light-blue: #a5c9ca;
+$light-blue: #e7f6f2;
+
+//breakpoints
+
+$extra-small-screen: '200px';
+$small-screen: '960px';
+$medium-screen: '1264px';
+$large-screen: '1904px';
+$extra-large-screen: '3840px';
+
+//function
+
+@mixin minScreen($size) {
+  //media screen this come in handy for given to pixels to image depending to screen
+  @media screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin maxScreen($size) {
+  @media screen and (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin fromTo($from, $to) {
+  @media screen and (min-width: $from) and (max-width: $to) {
+    @content;
+  }
+}
