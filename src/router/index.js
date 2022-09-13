@@ -7,19 +7,19 @@ import DetailPageProducts from '@/views/products/DetailPageProducts.vue'
 
 const routes = [
   {
-    path: '/',
+    path: 'v-store/',
     name: 'home',
     component: HomeView
      // eslint-disable-next-line
   },
   {
-    path: '/products',
+    path: 'v-store/products',
     name: 'products',
     component: ProductsPage
      // eslint-disable-next-line
   },
   {
-    path: '/categories',
+    path: 'v-store/categories',
     component: CategoriesPage,
      // eslint-disable-next-line,
      children:[
@@ -29,7 +29,7 @@ const routes = [
       component: ProductsForCategoriesPage
       },
       {
-        path:'/product-detail/:id',
+        path:'v-store/product-detail/:id',
         name:'detail-prodcuts',
         component:DetailPageProducts
       }
