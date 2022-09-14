@@ -5,7 +5,7 @@ import CategoriesPage from '@/views/categories/CategoriesPage.vue'
 import ProductsForCategoriesPage from '@/views/products/ProductsForCategoriesPage.vue'
 import DetailPageProducts from '@/views/products/DetailPageProducts.vue'
 
-const routes = [/*
+const routes = [
   {
     path: 'v-store/',
     name: 'home',
@@ -34,12 +34,14 @@ const routes = [/*
         component:DetailPageProducts
       }
      ]
-  },*/
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes:[
+
+  ],
 })
 
 export default router
